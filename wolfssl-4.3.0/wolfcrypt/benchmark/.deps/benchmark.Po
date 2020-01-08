@@ -11,12 +11,12 @@ wolfcrypt/benchmark/benchmark.o: wolfcrypt/benchmark/benchmark.c \
  /usr/include/x86_64-linux-gnu/bits/byteswap.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
  /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
  /usr/include/x86_64-linux-gnu/bits/uintn-identity.h /usr/include/sched.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/stddef.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
  /usr/include/x86_64-linux-gnu/bits/sched.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h \
  /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
  /usr/include/x86_64-linux-gnu/bits/time.h \
  /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
@@ -31,16 +31,16 @@ wolfcrypt/benchmark/benchmark.o: wolfcrypt/benchmark/benchmark.c \
  /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
  /usr/include/x86_64-linux-gnu/bits/setjmp.h /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include/stdarg.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
- /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
  /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
- /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/libio.h \
+ /usr/include/x86_64-linux-gnu/bits/_G_config.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
  /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
- /usr/include/x86_64-linux-gnu/bits/stdio.h /usr/include/dirent.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/dirent.h \
  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
@@ -50,6 +50,7 @@ wolfcrypt/benchmark/benchmark.o: wolfcrypt/benchmark/benchmark.c \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd.h \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h \
  /usr/include/x86_64-linux-gnu/sys/time.h \
@@ -58,28 +59,35 @@ wolfcrypt/benchmark/benchmark.o: wolfcrypt/benchmark/benchmark.c \
  /usr/include/x86_64-linux-gnu/bits/select.h \
  /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h \
  wolfcrypt/benchmark/benchmark.h /usr/include/string.h \
- /usr/include/strings.h wolfssl/wolfcrypt/memory.h /usr/include/stdlib.h \
+ /usr/include/strings.h \
+ /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+ /usr/include/x86_64-linux-gnu/bits/string_fortified.h \
+ wolfssl/wolfcrypt/memory.h /usr/include/stdlib.h \
  /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  /usr/include/x86_64-linux-gnu/sys/types.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/sysmacros.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- wolfssl/wolfcrypt/types.h /usr/include/ctype.h \
- wolfssl/wolfcrypt/random.h wolfssl/wolfcrypt/sha256.h \
- wolfssl/wolfcrypt/des3.h wolfssl/wolfcrypt/arc4.h \
- wolfssl/wolfcrypt/hc128.h wolfssl/wolfcrypt/rabbit.h \
- wolfssl/wolfcrypt/chacha.h wolfssl/wolfcrypt/chacha20_poly1305.h \
- wolfssl/wolfcrypt/aes.h wolfssl/wolfcrypt/poly1305.h \
- wolfssl/wolfcrypt/camellia.h wolfssl/wolfcrypt/md5.h \
- wolfssl/wolfcrypt/sha.h wolfssl/wolfcrypt/sha512.h \
- wolfssl/wolfcrypt/sha3.h wolfssl/wolfcrypt/rsa.h \
- wolfssl/wolfcrypt/integer.h wolfssl/wolfcrypt/tfm.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include-fixed/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/8/include-fixed/syslimits.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h wolfssl/wolfcrypt/types.h \
+ /usr/include/ctype.h wolfssl/wolfcrypt/random.h \
+ wolfssl/wolfcrypt/sha256.h wolfssl/wolfcrypt/des3.h \
+ wolfssl/wolfcrypt/arc4.h wolfssl/wolfcrypt/hc128.h \
+ wolfssl/wolfcrypt/rabbit.h wolfssl/wolfcrypt/chacha.h \
+ wolfssl/wolfcrypt/chacha20_poly1305.h wolfssl/wolfcrypt/aes.h \
+ wolfssl/wolfcrypt/poly1305.h wolfssl/wolfcrypt/camellia.h \
+ wolfssl/wolfcrypt/md5.h wolfssl/wolfcrypt/sha.h \
+ wolfssl/wolfcrypt/sha512.h wolfssl/wolfcrypt/sha3.h \
+ wolfssl/wolfcrypt/rsa.h wolfssl/wolfcrypt/integer.h \
+ wolfssl/wolfcrypt/tfm.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
  wolfssl/wolfcrypt/wolfmath.h wolfssl/wolfcrypt/hash.h \
  wolfssl/wolfcrypt/asn.h wolfssl/wolfcrypt/dh.h \
@@ -124,19 +132,19 @@ wolfssl/wolfcrypt/wc_port.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
+/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
+
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/sched.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/stddef.h:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
@@ -170,25 +178,25 @@ wolfssl/wolfcrypt/wc_port.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include/stdarg.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
+/usr/include/x86_64-linux-gnu/bits/libio.h:
+
+/usr/include/x86_64-linux-gnu/bits/_G_config.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
 /usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
 
 /usr/include/dirent.h:
 
@@ -212,6 +220,8 @@ wolfssl/wolfcrypt/wc_port.h:
 
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
+/usr/include/x86_64-linux-gnu/bits/unistd.h:
+
 /usr/include/x86_64-linux-gnu/sys/stat.h:
 
 /usr/include/x86_64-linux-gnu/bits/stat.h:
@@ -228,11 +238,17 @@ wolfssl/wolfcrypt/wc_port.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
+/usr/include/x86_64-linux-gnu/bits/select2.h:
+
 wolfcrypt/benchmark/benchmark.h:
 
 /usr/include/string.h:
 
 /usr/include/strings.h:
+
+/usr/include/x86_64-linux-gnu/bits/strings_fortified.h:
+
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:
 
 wolfssl/wolfcrypt/memory.h:
 
@@ -250,11 +266,17 @@ wolfssl/wolfcrypt/memory.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
+
+/usr/include/x86_64-linux-gnu/bits/sysmacros.h:
+
 /usr/include/alloca.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
 wolfssl/wolfcrypt/types.h:
 
@@ -296,9 +318,9 @@ wolfssl/wolfcrypt/integer.h:
 
 wolfssl/wolfcrypt/tfm.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed/limits.h:
+/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/limits.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed/syslimits.h:
+/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed/syslimits.h:
 
 /usr/include/limits.h:
 
