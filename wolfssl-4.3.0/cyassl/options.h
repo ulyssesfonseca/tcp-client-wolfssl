@@ -26,6 +26,9 @@ extern "C" {
 #define _POSIX_THREADS
 #endif
 
+#undef  DEBUG_WOLFSSL
+#define DEBUG_WOLFSSL
+
 #undef  HAVE_THREAD_LS
 #define HAVE_THREAD_LS
 

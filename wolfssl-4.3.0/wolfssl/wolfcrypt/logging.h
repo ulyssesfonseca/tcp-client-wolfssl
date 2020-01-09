@@ -154,12 +154,12 @@ WOLFSSL_API void wolfSSL_Debugging_OFF(void);
 
 #else
 
-    #define WOLFSSL_ENTER(m) printf("%s\n", m)
-    #define WOLFSSL_LEAVE(m, r) printf("%s %d\n", m, r);
+    #define WOLFSSL_ENTER(m)
+    #define WOLFSSL_LEAVE(m, r)
     #define WOLFSSL_STUB(m)
 
-    #define WOLFSSL_MSG(m) printf("%s\n",m)
-    #define WOLFSSL_BUFFER(b, l) 
+    #define WOLFSSL_MSG(m)
+    #define WOLFSSL_BUFFER(b, l)
 
 #endif /* DEBUG_WOLFSSL && !WOLFSSL_DEBUG_ERRORS_ONLY */
 
@@ -178,8 +178,8 @@ WOLFSSL_API void wolfSSL_Debugging_OFF(void);
     WOLFSSL_API void WOLFSSL_ERROR_MSG(const char* msg);
 
 #else
-    #define WOLFSSL_ERROR(e) printf("->%s-%d - error:%d\n",__FILE__,__LINE__,e)
-    #define WOLFSSL_ERROR_MSG(m) printf("->%s-%d error: %s\n",__FILE__,__LINE__,m);
+    #define WOLFSSL_ERROR(e)
+    #define WOLFSSL_ERROR_MSG(m)
 #endif
 
 #ifdef __cplusplus
