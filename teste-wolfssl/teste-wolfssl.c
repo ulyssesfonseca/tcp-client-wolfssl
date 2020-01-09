@@ -3,7 +3,14 @@
 #include <wolfssl/test.h>
 #include <errno.h>
 #include <stdio.h>
-#define SERV_PORT 1111
+
+#define LOCAL_TEST
+
+#ifndef LOCAL_TEST
+#define SERV_PORT 443//1500//1111
+#else
+#define SERV_PORT 1500
+#endif
 
 const unsigned char tago_cert[] = {
 		"-----BEGIN CERTIFICATE-----\n"
@@ -34,13 +41,22 @@ const unsigned char tago_cert[] = {
 		"uNmaqaMA0K0ZD7nQOedXceNRfr+GruHRduh2EZI0gMxfOpwfn98=\n"
 		"-----END CERTIFICATE-----\n"
 };
+int sockfd;
 
+int cbk_recv(WOLFSSL *ssl, char *buf, int sz, void *ctx){
+	printf(">>cbk_recv\n");
+	return recv(sockfd, buf, sz, 0);
+}
+int cbk_send(WOLFSSL *ssl, char *buf, int sz, void *ctx){
+	printf(">>cbk_send\n");
+	return send(sockfd, buf, sz, 0);
+}
 
 
 
 int main()
 {
-	int sockfd;
+	//int sockfd;
 	WOLFSSL_CTX* ctx;
 	WOLFSSL* ssl;
 	WOLFSSL_METHOD* method;
@@ -58,6 +74,11 @@ int main()
 	memset(&servAddr, 0, sizeof(servAddr));
 	servAddr.sin_family = AF_INET;
 	servAddr.sin_port = htons(SERV_PORT);
+#ifndef LOCAL_TEST
+	servAddr.sin_addr.s_addr = inet_addr("api.tago.io");//192.168.222.192");
+#else
+	servAddr.sin_addr.s_addr = inet_addr("192.168.222.192");
+#endif
 
 	printf("Connect to socket\n");
     /* connect to socket */
@@ -82,10 +103,13 @@ int main()
 
 	printf("wolfssl_ctx_load \n");
     /* Add cert to ctx */
-	// if (wolfSSL_CTX_load_verify_locations(ctx, "certs/ca-cert.pem", 0) !=SSL_SUCCESS) {
-	if (wolfSSL_CTX_load_verify_buffer(ctx, tago_cert, sizeof(tago_cert), SSL_FILETYPE_PEM) != SSL_SUCCESS) {
+	 if (wolfSSL_CTX_load_verify_locations(ctx, "tago_cert.pem", 0) !=SSL_SUCCESS) {
+	//if (wolfSSL_CTX_load_verify_buffer(ctx, tago_cert, sizeof(tago_cert), SSL_FILETYPE_PEM) != SSL_SUCCESS) {
 	     err_sys("Error loading certs/ca-cert.pem");
 	}
+
+	wolfSSL_SetIOSend(ctx, cbk_send);
+	wolfSSL_SetIORecv(ctx, cbk_recv);
 
 	printf("wolfssl_set \n");
     /* Connect wolfssl to the socket, server, then send message */
