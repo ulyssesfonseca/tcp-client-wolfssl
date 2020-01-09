@@ -5,6 +5,8 @@
 #include <stdio.h>
 
 #define LOCAL_TEST
+#define USE_FILE_CERT "tago_cert.pem"
+
 
 #ifndef LOCAL_TEST
 #define SERV_PORT 443//1500//1111
@@ -75,7 +77,7 @@ int main()
 	servAddr.sin_family = AF_INET;
 	servAddr.sin_port = htons(SERV_PORT);
 #ifndef LOCAL_TEST
-	servAddr.sin_addr.s_addr = inet_addr("api.tago.io");//192.168.222.192");
+	servAddr.sin_addr.s_addr = inet_addr("api.tago.io");
 #else
 	servAddr.sin_addr.s_addr = inet_addr("192.168.222.192");
 #endif
@@ -103,8 +105,11 @@ int main()
 
 	printf("wolfssl_ctx_load \n");
     /* Add cert to ctx */
-	 if (wolfSSL_CTX_load_verify_locations(ctx, "tago_cert.pem", 0) !=SSL_SUCCESS) {
-	//if (wolfSSL_CTX_load_verify_buffer(ctx, tago_cert, sizeof(tago_cert), SSL_FILETYPE_PEM) != SSL_SUCCESS) {
+#ifdef USE_FILE_CERT
+	 if (wolfSSL_CTX_load_verify_locations(ctx, USE_FILE_CERT, 0) !=SSL_SUCCESS) {
+#else
+	if (wolfSSL_CTX_load_verify_buffer(ctx, tago_cert, sizeof(tago_cert), SSL_FILETYPE_PEM) != SSL_SUCCESS) {
+#endif
 	     err_sys("Error loading certs/ca-cert.pem");
 	}
 
